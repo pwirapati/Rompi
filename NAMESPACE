@@ -1,0 +1,3 @@
+useDynLib(Romp)
+exportPattern("Romp_.et_")
+export("matvecex")

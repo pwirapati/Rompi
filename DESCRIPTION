@@ -1,0 +1,11 @@
+Package: Romp
+Type: Package
+Title: OpenMP controls
+Version: 0.0.1
+Date: 2016-12-10
+Author: Pratyaksha Wirapati
+Maintainer: Pratyaksha Wirapati <pratyaksha.wirapati@sib.swiss>
+Description: R interface to control OpenMP runtime parameters.
+License: GPL
+Packaged: 2020-12-11
+NeedsCompilation: yes
