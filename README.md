@@ -12,5 +12,5 @@ It is not an issue on most Linux distros with `gcc`.
 
 When loaded, the library set the number of maximum
 threads to half of those returned by `omp_get_num_procs()`.
-On common processors, this uses the number of cores instead
+On common processors, this uses the number of physical cores instead
 of hyperthreads.
