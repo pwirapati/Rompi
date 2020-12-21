@@ -12,10 +12,15 @@ runtime parameters}
 \usage{
   Romp_get_num_procs()
   Romp_get_max_threads()
-  Romp_set_num_threads(n)
+  Romp_set_num_threads(nthreads)
   Romp_get_schedule()
   Romp_set_schedule(kind,chunk_size)
 }
+\arguments{
+  \item{nthreads}{The number of threads}
+  \item{kind}{\code{"static"}, \code{"dynamic"}, \code{"guided"} or \code{"auto"}}
+  \item{chunk_size}{The size of chunks}
+  }
 \details{
   \code{Romp_get_num_procs} return the number of processors. On Intel
   under linux, the number includes virtual processors provided by
