@@ -14,16 +14,19 @@ These functions change the global state of OpenMP runtime execution (some of whi
 ## Installation
 
 ```R
-install_github("pwirapati/Rompi")
+devtools::install_github("pwirapati/Rompi")
 ```
 
-(need either `devtools` or `remote`s),
+or
 
-Installation may be a problem when the compiler does not support
+```R
+remotes::install_github("pwirapati/Rompi")
+```
+
+Installation (or loading the package) may be a problem when the compiler does not support
 OpenMP or without/misconfigured run-time library (e.g., `libgomp` or `libomp`).
 It is not an issue on most Linux distros with `gcc`, but can be tricky on MacOSX depending on the version of R, Xcode and/or other compilers such as `gcc` installation by `brew`.
-
-For Xcode with `clang` as the default compilter, follow the instruction on this [page]( https://mac.r-project.org/openmp/)  to install the appropriate version of `libomp` dynamic library. It is  necessary to create the file `~/.R/Makevars` with the following content:
+For Xcode with `clang` as the default compiler, follow the instruction on this [page]( https://mac.r-project.org/openmp/)  to install the appropriate version of `libomp` dynamic library. It is  necessary to create the file `~/.R/Makevars` with the following content:
 
 ```makefile
 CPPFLAGS += -Xclang -fopenmp
