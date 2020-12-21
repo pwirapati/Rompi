@@ -1,2 +1,2 @@
-useDynLib(Romp)
-exportPattern("Romp_.et_")
+useDynLib(Rompi)
+exportPattern("Rompi_.et_")

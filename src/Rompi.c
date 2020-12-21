@@ -6,26 +6,26 @@
 #include <omp.h>
 
 void
-Romp_get_num_procs(int *num_procs_)
+Rompi_get_num_procs(int *num_procs_)
 {
   *num_procs_ = omp_get_num_procs();
 }
 
 void
-Romp_get_max_threads(int *num_threads_)
+Rompi_get_max_threads(int *num_threads_)
 {
   *num_threads_ = omp_get_max_threads();
 }
 
 void
-Romp_set_num_threads(int *num_threads_)
+Rompi_set_num_threads(int *num_threads_)
 {
   omp_set_num_threads(*num_threads_);
   *num_threads_ = omp_get_max_threads();
 }
 
 void
-Romp_get_schedule(int *kind_, int *chunk_size_ )
+Rompi_get_schedule(int *kind_, int *chunk_size_ )
 {
   omp_sched_t kind;
   omp_get_schedule( &kind, chunk_size_ );
@@ -50,7 +50,7 @@ Romp_get_schedule(int *kind_, int *chunk_size_ )
 }
 
 void
-Romp_set_schedule(int *kind_, int *chunk_size_)
+Rompi_set_schedule(int *kind_, int *chunk_size_)
 {
   omp_sched_t kind;
   switch(*kind_)
@@ -72,5 +72,5 @@ Romp_set_schedule(int *kind_, int *chunk_size_)
     }
 
   omp_set_schedule(kind, *chunk_size_);
-  Romp_get_schedule( kind_, chunk_size_ );
+  Rompi_get_schedule( kind_, chunk_size_ );
 }

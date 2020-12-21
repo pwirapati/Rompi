@@ -1,4 +1,4 @@
-# Romp
+# Rompi
 
 This package contains R interface to various commonly used openMP library functions such as:
 
@@ -7,14 +7,14 @@ This package contains R interface to various commonly used openMP library functi
 * `omp_set_num_threads()` change the number of maximum threads
 *  `omp_{get,set}_schedule()` get and set scheduling and chunk size for parallel for-loops.
 
-See details in `?Romp` in R after installing and loading.
+See details in `?Rompi` in R after installing and loading.
 
-These functions change the global state of OpenMP runtime execution (some of which can also be specified via environment variables or `#pragma omp` arguments). If the OpenMP code allows runtime modifications, such as using `schedule(runtime)` for parallel loops, then the `Romp*` functions can be used to change the behavior by invoking them prior to calling the R wrapper functions that uses the OpenMP code.
+These functions change the global state of OpenMP runtime execution (some of which can also be specified via environment variables or `#pragma omp` arguments). If the OpenMP code allows runtime modifications, such as using `schedule(runtime)` for parallel loops, then the `Rompi*` functions can be used to change the behavior by invoking them prior to calling the R wrapper functions that uses the OpenMP code.
 
 ## Installation
 
 ```R
-install_github("pwirapati/Romp")
+install_github("pwirapati/Rompi")
 ```
 
 (need either `devtools` or `remote`s),
@@ -33,9 +33,9 @@ LDFLAGS += -lomp
 ## Running
 
 ```R
-library(Romp)
+library(Rompi)
 ```
 
-Note: the package may be compiled and installed correctly, but failed when loaded because R can not find the OpenMP dynamic library. Some OpenMP dependent packages can still be run if they don't call library functions, but `Romp` and other packages that needs the thread ids, maximum number of threads, etc. through library functions `<omp.h>` will not work.
+Note: the package may be compiled and installed correctly, but failed when loaded because R can not find the OpenMP dynamic library. Some OpenMP dependent packages can still be run if they don't call library functions, but `Rompi` and other packages that needs the thread ids, maximum number of threads, etc. through library functions `<omp.h>` will not work.
 
 When successfully loaded, the library set the number of maximum threads to half of those returned by `omp_get_num_procs()`. On common processors (such as commodity Intel and AMD) with hyperthreading enabled, this set the number of threads to the number physical cores. Typically there is very little advantage in using all the hyperthreads.
