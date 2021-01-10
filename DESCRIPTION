@@ -6,6 +6,6 @@ Date: 2016-12-10
 Author: Pratyaksha Wirapati
 Maintainer: Pratyaksha Wirapati <pratyaksha.wirapati@sib.swiss>
 Description: R interface to control OpenMP runtime parameters.
-License: GPL
+License: GPL (>=2)
 Packaged: 2020-12-11
 NeedsCompilation: yes
